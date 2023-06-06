@@ -61,6 +61,7 @@ But calling `.join` on the same array and giving it an argument of a `" :-) "`
 ("smiley face") will place an occurrence of that string, (i.e. the smiley face)
 between each letter:
 
+
 ```rb
 ["a", "b", "c"].join(" :-) ")
 # => "a :-) b :-) c"
@@ -92,3 +93,12 @@ around with your code. Good luck and have fun!
 
 - [Wikipedia](http://en.wikipedia.org) - [Serial Comma](http://en.wikipedia.org/wiki/Serial_comma)
 - [Dot Net Perls - Convert](http://www.dotnetperls.com/convert-ruby)
+
+## Explanation
+The first if statement checks if the size of the array is equal to 1 (array.size == 1). If it is, it means there is only one element in the array. In this case, the join method is called on the array with a comma separator (", "), and the resulting string is returned.
+
+The next elsif statement checks if the size of the array is equal to 2 (array.size == 2). If it is, it means there are exactly two elements in the array. In this case, the join method is called on the array with the word "and" as the separator (" and "), and the resulting string is returned.
+
+If none of the above conditions are true, it means the array has more than two elements. The else block is executed in this case. It modifies the last element of the array by prepending the word "and" to it (array[-1] = "and " + array[-1]). This ensures that the last element will be preceded by "and" when the array is joined into a string.
+    
+Finally, the join method is called on the modified array with a comma separator (", ") to join all the elements into a string, and the resulting string is returned.
